@@ -12,6 +12,8 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 100%;
+  justify-items: center;
+  align-items: center;
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,13 +41,17 @@ footer::after {
   height: 25px;
 }
 
+.header__theme-menu {
+   justify-self: end;
+}
+
 .header__theme-menu-list {
   margin-block-start: 75px;
   display: grid;
   grid-auto-flow: row;
   gap: 10px;
   justify-content: end;
-  justify-items: center;
+  justify-items: center; 
 }
 
 .header__theme-menu-item {
@@ -61,15 +67,8 @@ footer::after {
   color: var(--text-color);
 }
 
-.header__title,
-.block__title {
-  left: 10px;
-  right: 10px;
-}
-
 .header__title {
-  position: absolute;
-  margin-block-start: 238px;
+  align-self: center;
   font-family: var(--font-main);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: var(--fw-bold);
@@ -80,14 +79,13 @@ footer::after {
 }
 
 .block__title {
-  position: absolute;
-  margin: 485px auto 66px;
+  margin-block-start: 55px;
   overflow: hidden;
   line-height: 23.4px;
   font-family: var(--font-main);
   font-size: var(--font-size-base);
   font-weight: var(--fw-bold);
-  max-width: calc(100% - 20px);
+  width: 100%;
 }
 
 .section {
@@ -180,6 +178,16 @@ footer::after {
     content: "";
     bottom: 20px;
     left: 20px;
+  }
+
+  .header__title {
+    left: 0px;
+    right: 0px;
+  }
+
+  .block__title {
+    top: 240px;
+    left: 367px;
   }
 
   .header__title {
