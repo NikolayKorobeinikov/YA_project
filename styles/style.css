@@ -12,6 +12,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 100%;
+  grid-auto-rows: 1fr;
   justify-items: center;
   align-items: center;
   background-image: var(--background-image);
@@ -42,16 +43,16 @@ footer::after {
 }
 
 .header__theme-menu {
-   justify-self: end;
+  place-self: start end;
+  margin-block-start: 65px;
 }
 
 .header__theme-menu-list {
-  margin-block-start: 75px;
   display: grid;
   grid-auto-flow: row;
   gap: 10px;
   justify-content: end;
-  justify-items: center; 
+  justify-items: center;
 }
 
 .header__theme-menu-item {
@@ -79,6 +80,7 @@ footer::after {
 }
 
 .block__title {
+  place-self: start center;
   margin-block-start: 55px;
   overflow: hidden;
   line-height: 23.4px;
@@ -155,6 +157,8 @@ footer::after {
   text-shadow: var(--text-shadow);
 }
 
+/* @media 768px */
+
 @media (min-width: 768px) {
   .page {
     min-width: 768px;
@@ -181,28 +185,18 @@ footer::after {
   }
 
   .header__title {
-    left: 0px;
-    right: 0px;
-  }
-
-  .block__title {
-    top: 240px;
-    left: 367px;
-  }
-
-  .header__title {
-    margin-block-start: 463px;
+    margin-inline-start: -20px;
+    place-self: center start;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .header__theme-menu-list {
-    margin-block-start: 192px;
+  .header__theme-menu {
+    margin-block-start: 172px;
   }
 
   .block__title {
-    top: 162px;
-    right: 0px;
-    max-width: calc(100% - 404px);
+    place-self: start end;
+    max-width: calc(100% - 364px);
   }
 
   .section {
@@ -296,28 +290,32 @@ footer::after {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
+/* @media 1024px */
 
 @media (min-width: 1024px) {
   .page {
     min-width: 1024px;
   }
 
+  .header__theme-menu {
+    margin-block-start: 0;
+    place-self: start center;
+  }
+
   .header__theme-menu-list {
-    margin-block-start: 0px;
     display: flex;
     justify-content: center;
+    gap: 10px;
+    grid-auto-flow: unset;
+    margin-block-start: 0;
   }
 
   .block__title {
-    top: 563px;
-    right: 0px;
-    max-width: calc(100% - 533px);
+    max-width: calc(100% - 491px);
   }
 
   .header__title {
-    margin-block-start: 0px;
-    display: flex;
-    align-items: center;
+    place-self: center start;
   }
 
   .section__focus,
